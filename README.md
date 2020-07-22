@@ -17,6 +17,6 @@ font will update all sliders and sample text.
 		Testing only
 			org.junit.jupiter  junit-jupiter // JUnit 5
 </pre>
-<b>Screenshot</b>
+<b>Screenshot</b><br>
 <img src="src/com/billsdesk/github/monitorwindow/doc-files/MonitorWindow.jpg" width="50%%" alt="MonitorWindow.jpg">
 </p>
