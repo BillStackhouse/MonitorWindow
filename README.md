@@ -1,4 +1,4 @@
-Class for monitoring multiple thread pools. For each a bar graph will display number of threads,
+Class for monitoring multiple thread pools. For each, a bar graph will display number of threads,
 queued tasks, and active tasks. Below a title is a count of total tasks submitted and completed.
 Threshold lines are drawn at specified percentages showing yellow and red for warning and alert
 when the count is high.
