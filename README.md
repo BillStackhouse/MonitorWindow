@@ -17,7 +17,12 @@ when the count is high.
 			com.google.code.findbugs  jsr305 // javax.annotations
 		Testing only
 			org.junit.jupiter  junit-jupiter // JUnit 5
+
+		Selected files required for non-test source.
+
+		<img src="JarList.jpg" width ="50%" alt="JarList.jpg">
+
 </pre>
 <b>Screenshot</b><br>
-<img src="src/com/billsdesk/github/monitorwindow/doc-files/MonitorWindow.jpg" width="50%%" alt="MonitorWindow.jpg">
+<img src="src/com/billsdesk/github/monitorwindow/doc-files/MonitorWindow.jpg" width="25%%" alt="MonitorWindow.jpg">
 </p>
