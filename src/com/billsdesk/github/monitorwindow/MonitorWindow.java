@@ -32,7 +32,7 @@ import javax.swing.WindowConstants;
  * <img src="doc-files/MonitorWindow.jpg" width="100%" alt="MonitorWindow.jpg">
  *
  * @author Bill
- * @version $Rev: 8246 $ $Date: 2020-07-21 14:09:23 -0700 (Tue, 21 Jul 2020) $
+ * @version $Rev: 8280 $ $Date: 2020-08-04 09:07:33 -0700 (Tue, 04 Aug 2020) $
  */
 public class MonitorWindow
     extends
@@ -169,11 +169,16 @@ public class MonitorWindow
      *            ThreadPoolExecutor to monitor
      */
     public void addMonitor(final String name, final ThreadPoolExecutor executor) {
-        final Monitor monitor = new Monitor(name, executor, mScale, mAlert, mWarning);
-        monitor.setPreferredSize(mEmptySize);
-        getContentPane().add(monitor);
-        pack();
-        toRightEdge();
+        if (Arrays.asList(getContentPane().getComponents())
+                  .stream()
+                  .filter(c -> ((Monitor) c).sameExecutor(executor))
+                  .count() == 0) {
+            final Monitor monitor = new Monitor(name, executor, mScale, mAlert, mWarning);
+            monitor.setPreferredSize(mEmptySize);
+            getContentPane().add(monitor);
+            pack();
+            toRightEdge();
+        }
     }
 
     private void toRightEdge() {
@@ -248,6 +253,10 @@ public class MonitorWindow
         @Override
         public String toString() {
             return String.format("%s: %s", mName, mStatus.toString());
+        }
+
+        public boolean sameExecutor(final ThreadPoolExecutor executor) {
+            return mExecutor == executor;
         }
     }
 
